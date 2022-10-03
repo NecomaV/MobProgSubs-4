@@ -19,10 +19,12 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         var dice = Dice(6)
         var diceRoll = dice.roll()
+        var diceRoll2 = dice.roll2()
 
 
         // Find the ImageView in the layout
         val diceImage: ImageView = findViewById(R.id.imageView)
+        val diceImage2: ImageView = findViewById(R.id.imageView2)
 
 
         // Determine which drawable resource ID to use based on the dice roll
@@ -35,7 +37,18 @@ class MainActivity : AppCompatActivity() {
 
             else -> R.drawable.dice_6
         }
+        val drawableResource2 = when (diceRoll2) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+
+            else -> R.drawable.dice_6
+        }
+
         diceImage.setImageResource(drawableResource)
+        diceImage2.setImageResource(drawableResource2)
 
         // Update the content description
         diceImage.contentDescription = diceRoll.toString()
@@ -44,6 +57,9 @@ class MainActivity : AppCompatActivity() {
 class Dice(val numSides : Int){
     //randomizer between 1 and sides that we give
     fun roll() : Int{
+        return(1..numSides).random()
+    }
+    fun roll2() : Int{
         return(1..numSides).random()
     }
 }
