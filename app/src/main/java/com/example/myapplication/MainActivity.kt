@@ -3,6 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -18,10 +19,9 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         var dice = Dice(6)
         var diceRoll = dice.roll()
-        //finds a textview
-        var resultTextView : TextView= findViewById(R.id.textView)
-        //makes textview equal the value from diceroll
-        resultTextView.text = diceRoll.toString()
+        val diceImage: ImageView = findViewById(R.id.imageView)
+        diceImage.setImageResource(R.drawable.dice_2)
+
     }
 }
 class Dice(val numSides : Int){
