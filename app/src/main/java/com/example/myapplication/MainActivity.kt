@@ -1,6 +1,8 @@
+
+package com.example.myapplication
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
